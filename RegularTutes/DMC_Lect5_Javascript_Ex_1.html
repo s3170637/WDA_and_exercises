@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <script type="application/javascript">
+            //note that this tag must be EXPLICITLY closed, due to the way it's parsed
+            var num = 5;
+            var student = new Array(num);
+            var age = new Array(num);
+
+            student[0] = "Joe";
+            age[0] = 23;
+        </script>
+    </title>
+</head>
+<body>
+    <table>
+        <caption>Student List</caption>
+        <tr><th>Student</th><th>Age</th></tr>
+        <script type="application/javascript">
+            for (var i=0; i < num; i++)
+            {
+                document.write("<tr><td>"+student[i]+
+                        "</td><td>"+age[i]+"</td></tr>");
+            }
+        </script>
+    </table>
+</body>
+</html>

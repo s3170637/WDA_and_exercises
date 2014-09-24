@@ -1,0 +1,39 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    /*relative url path to background image. '../' indicates parent dir */
+    background-image: url('../images/background.jpg');
+    background-repeat: repeat;
+    font-family: Arial, Helvetica, monospace;
+    text-align: left;
+
+}
+
+/*hyper-link styles*/
+a:link {text-decoration: none; color: #0000ff}
+a:visited {color: #ff0000}
+a:hover {text-decoration: underline; color: #00ff00}
+
+h2
+{
+    font-size: 12px;
+    font-style: italic;
+    font-family: Georgia, Verdana, "Times New Roman", cursive;
+}
+
+h3 {font-style: italic;}
+
+header
+{
+    position: absolute;
+    margin-top: 0;
+}
+footer
+{
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 0;
+    left: 0;
+    font-style: italic;
+}

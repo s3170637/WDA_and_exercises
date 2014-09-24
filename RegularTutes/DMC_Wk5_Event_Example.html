@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <!--
+        example taken from w3schools
+        svg: scalable vector graphic
+        <svg id="1" width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+    -->
+
+    <!--svg example from DMC lecture:-->
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="100%" height="100%" onload="init()">
+    <script language="JavaScript" type="text/javascript">
+        var num = 0, jump = 0;
+        var rects = document.getElementsByTagName('rect');
+        var texts = document.getElementsByTagName('text');
+
+        function init()
+        {
+            newrand();
+        }
+
+        function newrand()
+        {
+            do {
+                num = Math.floor(Math.random()*5);
+                jump = Math.floor(Math.random()*5);
+            }   while (num == jump);
+        }
+
+        function Click(evt)
+        {
+            evt.target.setAttribute("opacity", "1.0");
+            evt.target.setAttribute("stroke", "black");
+
+            if (rects[num]==evt.target)
+            {
+                ("Aiee! You got me!!");
+            }
+            else if (rects[jump]==evt.target)
+            {
+                ("Missed me! And now I've hidden somewhere else. hehe!!");
+            }   else {
+                ("Missed!!");
+            }
+        }
+
+        function Highlight(evt)
+        {
+            evt.target.setAttribute("opacity", "1.0");
+        }
+        function Unhighlight(evt)
+        {
+            evt.target.setAttribute("opacity", "0.4");
+        }
+    </script>
+
+        <g id="grp1" stroke-widh="3"
+           font-weight="bold" font-size="20"
+           onmouseover="Highlight(evt);"
+           onmouseout="Unhighlight(evt);"
+           onclick="Click(evt);" >
+
+            <rect id="0" x="10" width="90" height="40" y="10"
+                 fill="blue" opacity="0.4" />
+            <rect id="1" x="110" width="90" height="40" y="10"
+                  fill="green" opacity="0.4" />
+            <rect id="2" x="210" width="90" height="40" y="10"
+                  fill="yellow" opacity="0.4" />
+            <rect id="3" x="310" width="90" height="40" y="10"
+                  fill="orange" opacity="0.4" />
+            <rect id="4" x="410" width="90" height="40" y="10"
+                  fill="red" opacity="0.4" />
+        </g>
+        <g stroke-width="3" font-weight="bold"
+           font-size="20">
+            <text x="40" y="70">Blue</text>
+            <text x="140" y="70">Green</text>
+            <text x="240" y="70">Yellow</text>
+            <text x="340" y="70">Orange</text>
+            <text x="440" y="70">Red</text>
+        </g>
+    </svg>
+</body>
+</html>

@@ -9,16 +9,17 @@
 namespace InheritanceDemo;
 
 
-class Wildcat {
-    public $fur;
+class Wildcat
+{
+   public $fur;
 
-    function __construct()
-    {
-        $this->fur = "TRUE";
-    }
+   function __construct()
+   {
+      $this->fur = "TRUE";
+   }
 
-    final function jump()
-    {
-        //final functions are written when you don't want a subclass to override them.
-    }
-} 
+   final function jump()
+   {
+      //final functions are written when you don't want a subclass to override them.
+   }
+}
